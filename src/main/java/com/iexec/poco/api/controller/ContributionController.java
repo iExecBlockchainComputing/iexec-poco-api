@@ -1,4 +1,4 @@
-package com.iexec.scheduler.mock.controller;
+package com.iexec.poco.api.controller;
 
 import com.iexec.scheduler.actuator.ActuatorService;
 import org.slf4j.Logger;

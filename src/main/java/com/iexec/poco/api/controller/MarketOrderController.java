@@ -1,4 +1,4 @@
-package com.iexec.scheduler.mock.controller;
+package com.iexec.poco.api.controller;
 
 import com.iexec.common.model.*;
 import com.iexec.scheduler.actuator.ActuatorService;

@@ -1,4 +1,4 @@
-package com.iexec.scheduler.mock;
+package com.iexec.poco.api;
 
 
 import com.iexec.scheduler.ethereum.IexecSchedulerLibrary;
