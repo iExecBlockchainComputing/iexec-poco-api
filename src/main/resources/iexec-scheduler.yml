@@ -1,0 +1,18 @@
+walletConfig:
+  path: "./src/main/resources/wallet/UTC--2018-02-14T08-32-12.500000000Z--8bd535d49b095ef648cd85ea827867d358872809.json"
+  password: "whatever"
+commonConfiguration:
+  nodeConfig:
+    clientAddress: http://localhost:8545 #https://rpckovan5w7wagudqhtw5khzsdtv.iex.ec/
+    startBlock: "0"
+  contractConfig:
+    rlcAddress: 0x091233035dcb12ae5a4a4b7fb144d3c5189892e1
+    iexecHubAddress: 0xc4e4a08bf4c6fd11028b714038846006e27d7be8
+    workerPoolConfig:
+      address: 0x597fa45586a1f4879605c0b8c04c4100a918ee0d
+      name: "myWorkerPool"              #unchangeable after creation
+      subscriptionLockStakePolicy: 0    #unchangeable after creation
+      subscriptionMinimumStakePolicy: 1
+      subscriptionMinimumScorePolicy: 0
+      stakeRatioPolicy: 30
+      schedulerRewardRatioPolicy: 1

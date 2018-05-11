@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+def UNIQUE_ID='hostname -f'.execute().text.trim()
+def tokenscheduler='curl -XPOST --data name=${UNIQUE_ID} https://6f087db4a17b65a64d456e474a6b4b16b59a52d59690b70d:@packagecloud.io/install/repositories/iexec/scheduler/tokens.text'.execute().text.trim()
+def tokencommon='curl -XPOST --data name=${UNIQUE_ID} https://cc02acaa7954c9d63333b18e6d5decead7d457ac3cfddeeb:@packagecloud.io/install/repositories/iexec/common/tokens.text'.execute().text.trim()
+
+repositories {
+    mavenCentral()
+    maven {
+      url "https://packagecloud.io/priv/${tokenscheduler}/iexec/scheduler/maven2"
+    }
+    maven {
+        url "https://packagecloud.io/priv/${tokencommon}/iexec/common/maven2"
+    }
+}
+
+ext {
+    web3jVersion = '3.3.1'
+    web3jSpringBootVersion = '1.5.0'
+    logbackVersion = '1.2.3'
+    junitVersion = '4.12'
+    springBootVersion = '1.5.9.RELEASE'
+}
+
+dependencies {
+    //compile "com.iexec.scheduler:iexec-scheduler:0.1.0-SNAPSHOT"
+    compile files('../iexec-scheduler/build/libs/iexec-scheduler-0.1.0-SNAPSHOT.jar')
+
+    // spring boot dependencies
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-configuration-processor:$springBootVersion"
+
+    testCompile "junit:junit:$junitVersion"
+}
+
+bootRun {
+    systemProperties = System.properties
+}
