@@ -1,7 +1,11 @@
 # iexec-poco-api
 
+
+
 ### endpoints
 ```
+
+Swagger UI: http://localhost:3030/api/swagger-ui.html
 
 http://localhost:3030/api/marketorders/1
 http://localhost:3030/api/workorders/0x

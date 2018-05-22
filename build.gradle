@@ -41,6 +41,8 @@ dependencies {
     // spring boot dependencies
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
     compile "org.springframework.boot:spring-boot-configuration-processor:$springBootVersion"
+    compile 'io.springfox:springfox-swagger2:2.7.0'
+    compile 'io.springfox:springfox-swagger-ui:2.7.0'
 
     testCompile "junit:junit:$junitVersion"
 }
