@@ -18,12 +18,12 @@ public class WorkerController {
     private final static ActuatorService actuatorService = ActuatorService.getInstance();
 
     //http://localhost:3030/api/worker/0x/score
-    @GetMapping(value = "/worker/{workerAddress}/score")
-    public BigInteger getWorkerScore(@PathVariable("workerAddress") String workerAddress) {
+    @GetMapping(value = "/workers/{workerAddress}/score")
+    public BigInteger getWorkerScore(@PathVariable(value = "workerAddress") String workerAddress) {
         return actuatorService.getWorkerScore(workerAddress);
     }
 
-    @GetMapping(value = "/worker/{workerAddress}/workorders/{workOrderId}/consensus")
+    @GetMapping(value = "/workers/{workerAddress}/workorders/{workOrderId}/consensus")
     public ConsensusModel getConsensusByWorkOrderId(@PathVariable("workerAddress") String workerAddress, @PathVariable("workOrderId") String workOrderId) {
         return WorkerPoolService.getInstance().getConsensusModelByWorkOrderId(workOrderId);
     }

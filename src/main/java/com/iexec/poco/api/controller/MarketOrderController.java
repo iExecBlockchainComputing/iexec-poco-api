@@ -26,7 +26,7 @@ public class MarketOrderController {
 
     //http://localhost:3030/api/marketorders/count
     @GetMapping(value = "/count")
-    public BigInteger getWorkerScore() {
+    public BigInteger getMarketOrderCount() {
         return MarketplaceService.getInstance().getMarketOrderCount();
     }
 
