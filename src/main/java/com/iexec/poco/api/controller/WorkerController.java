@@ -23,6 +23,7 @@ public class WorkerController {
         return actuatorService.getWorkerScore(workerAddress);
     }
 
+    //TODO - Remove - Endpoint migrated to ConsensusController (Should update calls in XW DEBUG logs)
     @GetMapping(value = "/workers/{workerAddress}/workorders/{workOrderId}/consensus")
     public ConsensusModel getConsensusByWorkOrderId(@PathVariable("workerAddress") String workerAddress, @PathVariable("workOrderId") String workOrderId) {
         return WorkerPoolService.getInstance().getConsensusModelByWorkOrderId(workOrderId);
